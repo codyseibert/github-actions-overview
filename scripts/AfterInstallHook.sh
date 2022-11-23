@@ -1,5 +1,5 @@
 #!/bin/bash
 set -e
-cd /var/www
+cd /
 npm install
 npm run start
