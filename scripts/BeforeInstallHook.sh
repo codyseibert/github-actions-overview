@@ -1,5 +1,5 @@
 #!/bin/bash
 set -e
 yum update -y
-sudo apt-get install node
-sudo apt-get install npm
+sudo yum install node
+sudo yum install npm
