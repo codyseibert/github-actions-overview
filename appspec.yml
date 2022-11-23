@@ -1,0 +1,11 @@
+version: 0.0
+os: linux
+files:
+  - source: /
+    destination: /var/www
+     commands:
+      - echo Build started on `date`
+      - echo Compiling the Node.js code
+      - npm run start
+
+    
