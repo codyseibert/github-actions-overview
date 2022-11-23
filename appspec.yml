@@ -3,9 +3,12 @@ os: linux
 files:
   - source: /
     destination: /var/www
-     commands:
-      - echo Build started on `date`
-      - echo Compiling the Node.js code
-      - npm run start
-
+     overwrite: true
+hooks:
+  BeforeInstall:
+    - location: scripts/BeforeInstallHook.sh
+      timeout: 300
+  AfterInstall:
+    - location: scripts/AfterInstallHook.sh
+      timeout: 300
     
