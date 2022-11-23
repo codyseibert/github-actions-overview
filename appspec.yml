@@ -2,8 +2,8 @@ version: 0.0
 os: linux
 files:
   - source: /
-    destination: /var/www
-     overwrite: true
+    destination: /
+    overwrite: true
 hooks:
   BeforeInstall:
     - location: scripts/BeforeInstallHook.sh
