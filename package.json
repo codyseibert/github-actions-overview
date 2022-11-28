@@ -5,6 +5,7 @@
   "main": "math.js",
   "scripts": {
     "test": "jest",
+    "build": "node app.js",
     "start": "node app.js"
 
   },
