@@ -1,0 +1,14 @@
+version: 0.0
+os: linux
+files:
+  - source: /
+    destination: /
+    overwrite: true
+hooks:
+  BeforeInstall:
+    - location: scripts/BeforeInstallHook.sh
+      timeout: 300
+  AfterInstall:
+    - location: scripts/AfterInstallHook.sh
+      timeout: 300
+    

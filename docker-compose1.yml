@@ -1,0 +1,26 @@
+-
+version: 0.2
+phases:
+install:
+ untine-versions
+ dockert 18
+ nedejse 18
+pre_builds
+ commands:
+ - echo Installing Dependencies
+ - прп install
+ - S(aws ecr get-login --no-include-email -region SANS_DEFAULT_REGION)
+builds
+ commands:
+ - echo Testing
+#  - npm run test
+ - npm run build
+ - docker build -1 SIMAGE_REPO_NAME:SIMAGE_TAG
+ - docker tag SIMAGE_REPO_NAME:SIMAGE_TAG amazonaws. Om/SIMAGE_REPO_NAME:SIMAGE_TAG
+post_builds
+ commands
+ - echo Pushing the docker image
+ - docker push SIMAGE_TAG
+ -printf SCONTAINER_NAME SAMS_ACCOUNT_ID. dkr.ecr. SAMS_DEFAULT_REGION. anazonaws. COm/SIMAGE_REPO_NAME:SIMAGE_TAG > imagedefinitions.json
+artifacts:
+files: imagedefinitions.json
