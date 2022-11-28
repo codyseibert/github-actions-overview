@@ -15,7 +15,7 @@ phases:
       - echo Running tests
       - npm test
       - echo Building and tagging Docker image
-      - aws ecr get-login-password --region us-east-2 | docker login --username AWS --password-stdin 569339242131.dkr.ecr.us-east-1.amazonaws.com
+      - aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 569339242131.dkr.ecr.us-east-1.amazonaws.com
       - docker build -t code-deply-node .
       - docker tag code-deply-node:latest 569339242131.dkr.ecr.us-east-1.amazonaws.com/code-deply-node:latest
 
