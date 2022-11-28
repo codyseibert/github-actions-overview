@@ -16,14 +16,14 @@ phases:
       - npm test
       - echo Building and tagging Docker image
       - aws ecr get-login-password --region us-east-2 | docker login --username AWS --password-stdin 569339242131.dkr.ecr.us-east-1.amazonaws.com
-      - docker build -t node-api .
-      - docker tag node-api:latest 569339242131.dkr.ecr.us-east-1.amazonaws.com/code-deply-node:latest
+      - docker build -t code-deply-node .
+      - docker tag code-deply-node:latest 569339242131.dkr.ecr.us-east-1.amazonaws.com/code-deply-node:latest
 
   post_build:
     commands:
       - echo Pushing to ECR
       - docker push 569339242131.dkr.ecr.us-east-1.amazonaws.com/code-deply-node:latest
-      - printf '[{"name":"node-api","imageUri":"569339242131.dkr.ecr.us-east-1.amazonaws.com/code-deply-node:latest"}]' > imagedefinitions.json
+      - printf '[{"name":"code-deply-node","imageUri":"569339242131.dkr.ecr.us-east-1.amazonaws.com/code-deply-node:latest"}]' > imagedefinitions.json
 
 artifacts:
   files:
