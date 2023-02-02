@@ -1,6 +1,8 @@
 name: Unit Tests
 
-on: [push_request]
+on:
+  push:
+    branches: ['master']
 
 jobs:
   tests:
