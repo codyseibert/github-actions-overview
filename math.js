@@ -3,4 +3,5 @@ module.exports = {
   subtract: (a, b) => a - b,
   multiply: (a, b) => a * b,
   divide: (a, b) => a / b,
+  modulo: (a, b) => a % b,
 };
